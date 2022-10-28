@@ -11,16 +11,16 @@ import { RoadmapNodeEntity } from './Roadmap_node.entity';
 
 @Entity('RoadMap')
 export class RoadmapEntity {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('increment')
     @OneToMany(() => RoadmapNodeEntity, (node) => node.rm_id)
-    rm_id: number;
+    rm_id: RoadmapNodeEntity[];
 
     @Column({ length: 20 })
     rm_name: string;
 
     @Column()
     rm_description: string;
-    @JoinColumn()
-    @ManyToOne(() => UserEntity)
-    user: UserEntity;
+    // @JoinColumn()
+    // @ManyToOne(() => UserEntity)
+    // user: UserEntity;
 }

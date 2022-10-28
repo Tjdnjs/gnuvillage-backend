@@ -10,14 +10,14 @@ import {
 
 @Entity('NodeConnection')
 export class NodeConnection {
-    @PrimaryGeneratedColumn()
-    conn_id: bigint;
+    @PrimaryGeneratedColumn('increment')
+    conn_id: number;
 
     @Column()
     @ManyToOne(() => RoadmapNodeEntity, {createForeignKeyConstraints: false})
-    conn_front: bigint;
+    conn_front: number;
 
     @Column()
     @ManyToOne(() => RoadmapNodeEntity, {createForeignKeyConstraints: false})
-    conn_back: bigint;
+    conn_back: number;
 }

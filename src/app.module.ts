@@ -6,7 +6,8 @@ import { RoadmapsModule } from './modules/roadmaps/rmodules/roadmaps.module';
 import { SubscriptionsModule } from './modules/subscriptions/subscriptions.module';
 import { AuthModule } from './common/auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import dataSource from './config/ormconfig';
+import dataSource from './config/ormconfig.dev';
+
 @Module({
   imports: [
     UsersModule,
@@ -20,4 +21,5 @@ import dataSource from './config/ormconfig';
   controllers: [],
   providers: [],
 })
+
 export class AppModule {}
